@@ -3,6 +3,8 @@ import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators, State } from './state';
+import { Button } from 'react-bootstrap';
+
 
 function App() {
   const state = useSelector((state: State) => state.bank)
@@ -14,9 +16,10 @@ function App() {
   return (
     <div className="App">
       <h1>{state}</h1>
-      <button onClick={() => depositMoney(1000)}>Deposit</button>
-      <button onClick={() => withdrawMoney(1000)}>Withdraw</button>
-      <button onClick={() => bankrupt()}>Bankrupt</button>
+  
+      <Button variant="success" onClick={() => depositMoney(1000)}>Deposit</Button>
+      <Button variant="danger" onClick={() => withdrawMoney(1000)}>Withdraw</Button>
+      <Button variant="secondary" onClick={() => bankrupt()}>Bankrupt</Button>
     </div>
   );
 }

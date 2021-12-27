@@ -12,5 +12,10 @@ interface BankruptAction {
     type: "bankrupt"
 }
 
-export type Action = DepositAction | WithdrawAction | BankruptAction
+interface InputAction {
+    type: "input"
+    payload: number
+}
+
+export type Action = DepositAction | WithdrawAction | BankruptAction | InputAction
 
